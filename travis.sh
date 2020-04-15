@@ -24,6 +24,9 @@ fi
 # Login to dockerhub
 echo "${DH_PASSWORD}" | docker login --username $DH_USERNAME --password-stdin
 
+# Register qemu static bins
+docker run --rm --privileged multiarch/qemu-user-static:register
+
 # Run the build
 ./build.sh
 
