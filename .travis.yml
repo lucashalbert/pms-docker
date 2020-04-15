@@ -1,0 +1,19 @@
+language: shell
+dist: xenial
+os: linux
+services:
+  - docker
+addons:
+  apt:
+    packages:
+      - docker-ce
+script:
+  - ./travis.sh
+after_success:
+  - docker images
+branches:
+  only:
+    - master
+  except:
+    - /^*-v[0-9]/
+    - /^v\d.*$/
