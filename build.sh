@@ -53,10 +53,10 @@ done
 
 
 # Create version specific docker manifest
-DOCKER_CLI_EXPERIMENTAL=enabled docker manifest create lucashalbert/pms-docker:${plex_ver} lucashalbert/pms-docker:amd64-${plex_ver} lucashalbert/pms-docker:arm32v6-${plex_ver} lucashalbert/pms-docker:arm64v8-${plex_ver}
+DOCKER_CLI_EXPERIMENTAL=enabled docker manifest create lucashalbert/pms-docker:${plex_ver} lucashalbert/pms-docker:amd64-${plex_ver} lucashalbert/pms-docker:arm32v7-${plex_ver} lucashalbert/pms-docker:arm64v8-${plex_ver}
 
 # Create latest docker manifest
-DOCKER_CLI_EXPERIMENTAL=enabled docker manifest create lucashalbert/pms-docker:latest lucashalbert/pms-docker:amd64-${plex_ver} lucashalbert/pms-docker:arm32v6-${plex_ver} lucashalbert/pms-docker:arm64v8-${plex_ver}
+DOCKER_CLI_EXPERIMENTAL=enabled docker manifest create lucashalbert/pms-docker:latest lucashalbert/pms-docker:amd64-${plex_ver} lucashalbert/pms-docker:arm32v7-${plex_ver} lucashalbert/pms-docker:arm64v8-${plex_ver}
 
 for docker_arch in amd64 arm32v7 arm64v8; do
     case ${docker_arch} in
